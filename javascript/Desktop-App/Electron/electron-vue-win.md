@@ -1,5 +1,7 @@
 # Electron with Webpack and VueJS
 
+> Status: Finished
+
 ## Summary
 
 1. Requirements
@@ -15,34 +17,37 @@
 * NPM (https://www.npmjs.com/)
 * Atom (https://atom.io)
 
-
 ## Install
 
 * Create the project directory
-```
+
+```cmd
 mkdir [project-name]
 cd [project-name]
 ```
 
 * start the npm project
-```
+
+```cmd
 npm init
 ```
 
 * install dependencies
-```
+
+```cmd
 npm install electron webpack electron-webpack vue vue-loader vue-template-compiler electron-builder --save-dev
 npm install source-map-support --save
 ```
 
 * still inside your project's directory, create the following folders
-```
+
+```cmd
 mkdir src\main src\renderer
 ```
 
+* create the following files
 
-* create the following files:
-```
+``` cmd
 echo .> webpack.config.js
 echo .> src\index.html
 echo .> src\main\index.js
@@ -50,14 +55,14 @@ echo .> src\renderer\index.js
 echo .> src\renderer\App.vue
 ```
 
-
 * open atom from the project's directory
-```
+
+```cmd
 atom .
 ```
 
-
 * content of "webpack.config.js"
+
 ```js
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
@@ -75,8 +80,8 @@ module.exports = {
 }
 ```
 
-
 * content of "src\index.html"
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -98,8 +103,8 @@ module.exports = {
 </html>
 ```
 
-
 * content "src\main\index.js"
+
 ```js
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
@@ -132,8 +137,8 @@ app.on("window-all-closed", () => {
 })
 ```
 
-
 * content "src\renderer\index.js"
+
 ```js
 import Vue from 'vue'
 import App from './App.vue'
@@ -148,6 +153,7 @@ new Vue({
 
 
 * content "src\renderer\App.vue"
+
 ```vue
 <template>
   <div class="">
@@ -170,6 +176,7 @@ export default {
 ```
 
 * edit "package.json"
+
 ```json
 "scripts": {
     "start": "electron-webpack dev",
@@ -180,22 +187,23 @@ export default {
 ## How to use
 
 * Run the Application on dev mode
-```
+
+```cmd
 npm start
 ```
 
 * Build the Application
-```
+
+```cmd
 npm run build
 ```
-
 
 ## Update
 
 [empty]
 
-
 ## References
 
 ### Electron with webpack and Vue.js
+
 https://www.youtube.com/watch?v=oL7vIDkDOsg
